@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-# a Bash script that displays lines containing the bash word, You cannot use pgrep
-# shellcheck disable=SC2009
-
-ps -auxf | grep 'bash'
