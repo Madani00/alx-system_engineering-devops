@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-# displays Best School 10 times using until
-
-a=1
-until (( a > 10 ))
-do
-	echo "Best School"
-	(( a++ ))
-done
