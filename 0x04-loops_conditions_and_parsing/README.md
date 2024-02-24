@@ -68,21 +68,22 @@ case $variable in
 esac
 ```
 ## 5. Using the Cut Command
-
+```
 cut -d delimiter -f fields file
-cut: Command to extract sections from each line of a file.
--d delimiter: Specifies the delimiter character.
--f fields: Specifies the fields to extract.
-file: The input file.
-6. File Comparison Operators
--eq: Equal to
--ne: Not equal to
--lt: Less than
--le: Less than or equal to
--gt: Greater than
--ge: Greater than or equal to
+```
+* cut: Command to extract sections from each line of a file.
+* -d delimiter: Specifies the delimiter character.
+* -f fields: Specifies the fields to extract.
+* file: The input file.
+  
+## 6. File Comparison Operators
+* -eq: Equal to
+* -ne: Not equal to
+* -lt: Less than
+* -le: Less than or equal to
+* -gt: Greater than
+* -ge: Greater than or equal to
 Other Comparison Operators:
-
-==: String equality in some contexts.
-!=: String inequality in some contexts.
+* ==: String equality in some contexts.
+* !=: String inequality in some contexts.
 Used in conditional statements to compare values.
