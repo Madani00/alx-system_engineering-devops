@@ -84,6 +84,7 @@ cut -d delimiter -f fields file
 * -gt: Greater than
 * -ge: Greater than or equal to
 <p> Other Comparison Operators:<p>
+
 * ==: String equality in some contexts.
 * !=: String inequality in some contexts.
-Used in conditional statements to compare values.
+<p> Used in conditional statements to compare values.
