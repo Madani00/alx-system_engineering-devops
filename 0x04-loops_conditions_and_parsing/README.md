@@ -27,30 +27,30 @@ until [ condition ]; do
   # Code to execute
 done
 ```
-For Loop
-bash
-Copy code
+## For Loop
+```
 for variable in list; do
   # Code to execute
 done
-4. Conditional Statements
-If Statement
-bash
-Copy code
+```
+
+## 4. Conditional Statements
+### If Statement
+```
 if [ condition ]; then
   # Code to execute if condition is true
 fi
-Else Statement
-bash
-Copy code
+```
+### Else Statement
+```
 if [ condition ]; then
   # Code to execute if condition is true
 else
   # Code to execute if condition is false
 fi
-Elif Statement
-bash
-Copy code
+```
+### Elif Statement
+```
 if [ condition1 ]; then
   # Code to execute if condition1 is true
 elif [ condition2 ]; then
@@ -58,17 +58,17 @@ elif [ condition2 ]; then
 else
   # Code to execute if all conditions are false
 fi
-Case Statement
-bash
-Copy code
+```
+### Case Statement
+```
 case $variable in
   pattern1) # Code for pattern1 ;;
   pattern2) # Code for pattern2 ;;
   *) # Default code if no pattern matches ;;
 esac
-5. Using the Cut Command
-bash
-Copy code
+```
+## 5. Using the Cut Command
+
 cut -d delimiter -f fields file
 cut: Command to extract sections from each line of a file.
 -d delimiter: Specifies the delimiter character.
