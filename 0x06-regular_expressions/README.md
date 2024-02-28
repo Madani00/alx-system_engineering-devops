@@ -5,7 +5,7 @@ A regular expression, commonly called a “regexp”, is a sequence of character
 <p align="center">
 <img height="400" src="https://datasciencedojo.com/wp-content/uploads/regular-expressions-meme.webp"/>
 
-Some people, when confronted with a problem, think “I know, I’ll use regular expressions.”   Now they have two problems. (super classic joke in the industry)
+<p colour="red"> Some people, when confronted with a problem, think “I know, I’ll use regular expressions.”   Now they have two problems. </p> (super classic joke in the industry)
 
 One thing you have to be careful with is that different languages use different regexp engines. That means that a regexp in Python, for example, will be interpreted differently in Javascript:
 
