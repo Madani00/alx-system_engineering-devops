@@ -1,2 +1,2 @@
 #!/usr/bin/env ruby
-puts ARGV[0].scan(/^.[^o]{3,}$/).join
+puts ARGV[0].scan(/^.[^o]{3,7}$/).join
