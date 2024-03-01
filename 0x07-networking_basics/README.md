@@ -1,4 +1,4 @@
-## task 0
+# task 0
 ### What is the OSI model?
 * 1.Set of specifications that network hardware manufacturers must respect
 * 2.The OSI model is a conceptual model that characterizes the communication functions of a telecommunication system without regard to their underlying internal structure and technology
@@ -8,7 +8,7 @@
 * 2.From the lowest to the highest level
 * 3.Randomly
 
-## task 1
+# task 1
 ### What type of network a computer in local is connected to?
 
 * 1.Internet
