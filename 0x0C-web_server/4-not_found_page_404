@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Configure your Nginx server to have a custom 404 page
+# that contains the string Ceci n'est pas une page.
+
+oldstr="server_name _;"
+newstr="server_name _;\n\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}"
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo sh -c 'echo "Hello World!" > /var/www/html/index.nginx-debian.html'
+sudo sed -i -e "s|$oldstr|$newstr|" /etc/nginx/sites-enabled/default
+
+oldstr="=404;"
+newstr="@oui_oui_baguette;\n\t}\n\n\tlocation @oui_oui_baguette {\n\t\tdefault_type text/html;\n\t\treturn 404 \"Ceci n\'est pas une page\";"
+
+sudo sed -i -z "s|$oldstr|$newstr|" /etc/nginx/sites-enabled/default
+
+sudo service nginx restart
