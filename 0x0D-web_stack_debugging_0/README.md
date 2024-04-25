@@ -9,7 +9,7 @@ In this debugging series, broken/bugged webstacks will be given to you, the fina
 
 Let’s start with a very simple example. My server must:
 
-* have a copy of the /etc/passwd file in /tmp
+* have a copy of the /etc/passwd file in /tmp .
 * have a file named /tmp/isworking containing the string OK
 
 Let’s pretend that without these 2 elements, my web application cannot work.
