@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# install nginx automaticly
+
+sudo apt update -y
+sudo apt install -y nginx
+
+# listen on port 80
+sudo ufw allow 'Nginx HTTP'
+
+# this will display 'Hello world' in the website
+sudo echo "Hello World!" | sudo tee /var/www/html/index.html
+
+# backup website config
+sudo cp /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default.backup
+
+# replace redirection
+new_string="        location /redirect_me {
+                 return 301 https://www.youtube.com/watch?v=3lFkDc6dFoY;
+        }"
+sudo sed -i '53r /dev/stdin' /etc/nginx/sites-enabled/default <<< "$new_string"
+
+# when the website is not found: 404 page
+sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html
+
+error_string="        error_page 404 /custom_404.html;
+        location = /custom_404.html {
+                 root /var/www/html;
+                 internal;
+        }"
+sudo sed -i '53r /dev/stdin' /etc/nginx/sites-enabled/default <<< "$error_string"
+
+# add custom header
+my_hostname=$(hostname)
+custom_header="         add_header X-Served-By ${my_hostname};"
+sudo sed -i '51r /dev/stdin' /etc/nginx/sites-enabled/default <<< "$custom_header"
+
+# start nginx to apply the changes that has been made.
+sudo service nginx restart
