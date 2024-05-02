@@ -11,7 +11,7 @@ frontend my_web
         default_backend my_web_backend
 
 backend my_web_backend
-        server 290353-web-01 52.73.249.3 check
+        server 290353-web-01 52.73.249.3:80 check
         server 290353-web-02 54.146.71.171:80 check"
 
 echo "$haproxy_config" | sudo tee /etc/haproxy/haproxy.cfg
