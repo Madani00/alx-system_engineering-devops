@@ -1,44 +1,18 @@
 #!/usr/bin/env bash
-# Usage: ./0-world_wide_web domain [subdomain]
+# The script aims to display information about subdomains for a given domain.
 
-domain="$1"
-subdomain="$2"
-
-# Function to get DNS information
-get_dns_info() {
-    local sub="$1"
-    local record_type
-    local destination
-
-    # Use dig to get DNS info
-    dns_output=$(dig "$sub.$domain" +short)
-
-    if [[ -z "$dns_output" ]]; then
-        echo "Subdomain $sub does not exist."
-        return
-    fi
-
-    # Determine record type (A or CNAME)
-    if [[ "$dns_output" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-        record_type="A"
-        destination="$dns_output"
-    else
-        record_type="CNAME"
-        destination=$(dig "$sub.$domain" +short +answer | awk '{print $NF}')
-    fi
-
-    echo "The subdomain $sub is a $record_type record and points to $destination"
+extract() {
+	local domain=$1
+	local sub=$2
+	ip=$(dig "$sub"."$domain" | grep -A1 'ANSWER SECTION:' | awk '{print $5}' | tail -1)
+	rec=$(dig "$sub"."$domain" | grep -A1 'ANSWER SECTION:' | awk '{print $4}' | tail -1)
+	echo "The subdomain $sub is a $rec record and points to $ip"
 }
-
-# Main script logic
-if [[ -z "$subdomain" ]]; then
-    # Display info for default subdomains
-    get_dns_info "www"
-    get_dns_info "lb-01"
-    get_dns_info "web-01"
-    get_dns_info "web-02"
+if [ $# -eq 2 ]; then
+	extract "$1" "$2"
 else
-    # Display info for specified subdomain
-    get_dns_info "$subdomain"
+	extract "$1" 'www'
+	extract "$1" 'lb-01'
+	extract "$1" 'web-01'
+	extract "$1" 'web-02'
 fi
-
