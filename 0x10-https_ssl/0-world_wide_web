@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# Usage: ./0-world_wide_web domain [subdomain]
+
+domain="$1"
+subdomain="$2"
+
+# Function to get DNS information
+get_dns_info() {
+    local sub="$1"
+    local record_type
+    local destination
+
+    # Use dig to get DNS info
+    dns_output=$(dig "$sub.$domain" +short)
+
+    if [[ -z "$dns_output" ]]; then
+        echo "Subdomain $sub does not exist."
+        return
+    fi
+
+    # Determine record type (A or CNAME)
+    if [[ "$dns_output" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+        record_type="A"
+        destination="$dns_output"
+    else
+        record_type="CNAME"
+        destination=$(dig "$sub.$domain" +short +answer | awk '{print $NF}')
+    fi
+
+    echo "The subdomain $sub is a $record_type record and points to $destination"
+}
+
+# Main script logic
+if [[ -z "$subdomain" ]]; then
+    # Display info for default subdomains
+    get_dns_info "www"
+    get_dns_info "lb-01"
+    get_dns_info "web-01"
+    get_dns_info "web-02"
+else
+    # Display info for specified subdomain
+    get_dns_info "$subdomain"
+fi
+
