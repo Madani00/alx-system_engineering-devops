@@ -1,4 +1,2 @@
- * Stopping nginx nginx
-   ...done.
- * Starting nginx nginx
-   ...done.
+ * Reloading nginx configuration nginx
+   ...fail!
