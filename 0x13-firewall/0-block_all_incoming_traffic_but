@@ -1,0 +1,13 @@
+sudo apt-get update
+sudo apt-get install -y ufw 
+
+# a good way to set some defaults
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+# allow ports
+sudo allow ufw 22
+sudo allow ufw 443
+sudo allow ufw 80
+
+sudo enable ufw
