@@ -10,4 +10,4 @@ sudo allow ufw 22
 sudo allow ufw 443
 sudo allow ufw 80
 
-sudo enable ufw
+sudo ufw enable
