@@ -2,6 +2,4 @@
 
 - DevOps
 - SysAdmin
-- Security
-
-fjhfk55
+- Security.
