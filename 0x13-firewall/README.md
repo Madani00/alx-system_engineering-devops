@@ -2,4 +2,4 @@
 
 - DevOps
 - SysAdmin
-- Security
+- Security.
