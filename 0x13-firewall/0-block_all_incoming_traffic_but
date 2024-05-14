@@ -8,8 +8,8 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing
 
 # allow ports
-sudo allow ufw 22
-sudo allow ufw 443
-sudo allow ufw 80
+sudo allow ufw 22/tcp
+sudo allow ufw 443/tcp
+sudo allow ufw 80/tcp
 
 sudo ufw enable
