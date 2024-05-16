@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Configures the container to run nginx as nginx user.
+
+sed -i '1s/^/user nginx;\n/' /etc/nginx/nginx.conf
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
+chmod 644 /etc/nginx/nginx.conf
+pkill apache2
+sudo -u nginx service nginx restart
