@@ -26,7 +26,8 @@ if __name__ == "__main__":
             done_number += 1
             done_titles.append(todo.get("title"))
 
+    employe_name = user_data.get("name")
     print("Employee {} is done with tasks({}/{}):"
-          .format(user_data, done_number, len(todos_data)))
+          .format(employe_name, done_number, len(todos_data)))
     for title in done_titles:
         print("\t {}".format(title))
