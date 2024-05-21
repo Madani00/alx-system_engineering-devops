@@ -2,9 +2,9 @@
 """
 extend your Python script to export data in the CSV format.
 """
+import csv
 import requests
 import sys
-import csv
 
 
 if __name__ == "__main__":
@@ -22,5 +22,5 @@ if __name__ == "__main__":
     with open('{}.csv'.format(emp_id), 'w', newline='') as file:
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         for t in todos_data:
-            writer.writerow([emp_id, user_data.get("name"),
+            writer.writerow([emp_id, user_data.get("username"),
                             t.get("completed"), t.get("title")])
