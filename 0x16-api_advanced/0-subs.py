@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""my module"""
+"""
+my module
+"""
 import requests
 
 headers = {"User-Agent": "MyCustomUserAgent/1.0"}
