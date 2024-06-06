@@ -8,5 +8,5 @@ Wordpress is usually run on LAMP (Linux, Apache, MySQL, and PHP), which is a ver
 
 The web stack you are debugging today is a Wordpress website running on a LAMP stack...k
 54
-4
+44
 4054
