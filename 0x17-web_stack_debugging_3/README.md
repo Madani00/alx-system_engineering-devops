@@ -7,6 +7,6 @@ Wordpress is a very popular tool, it allows you to run blogs, portfolios, e-comm
 Wordpress is usually run on LAMP (Linux, Apache, MySQL, and PHP), which is a very widely used set of tools.
 
 The web stack you are debugging today is a Wordpress website running on a LAMP stack...k
-5
+54
 4
 4054
